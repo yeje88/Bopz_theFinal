@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 830,
+          "bottomRow": 790,
           "containerStyle": "none",
           "snapRows": 73,
           "parentRowSpace": 1,
@@ -35,15 +35,15 @@
               "searchTags": [
                 "group"
               ],
-              "topRow": 58,
-              "bottomRow": 83,
+              "topRow": 54,
+              "bottomRow": 79,
               "parentRowSpace": 10,
               "type": "FORM_WIDGET",
               "hideCard": false,
               "shouldScrollContents": true,
               "animateLoading": true,
               "parentColumnSpace": 13.5,
-              "leftColumn": 2,
+              "leftColumn": 0,
               "dynamicBindingPathList": [
                 {
                   "key": "borderRadius"
@@ -223,6 +223,7 @@
                       "boxShadow": "none",
                       "widgetName": "Song_Entry",
                       "isFilterable": true,
+                      "dynamicPropertyPathList": [],
                       "displayName": "Select",
                       "iconSVG": "/static/media/icon.bd99caba5853ad71e4b3d8daffacb3a2.svg",
                       "labelText": "Select Song",
@@ -239,7 +240,11 @@
                       "defaultOptionValue": "GREEN",
                       "animateLoading": true,
                       "parentColumnSpace": 12.5546875,
-                      "dynamicTriggerPathList": [],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onOptionChange"
+                        }
+                      ],
                       "leftColumn": 2,
                       "dynamicBindingPathList": [
                         {
@@ -274,6 +279,7 @@
                       "responsiveBehavior": "fill",
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
+                      "onOptionChange": "{{add_song.run(() => {}, () => showAlert('Song did not add'))}}",
                       "minDynamicHeight": 4
                     }
                   ],
@@ -298,7 +304,7 @@
               "key": "izvxdgylsl",
               "backgroundColor": "#FFFFFF",
               "isDeprecated": false,
-              "rightColumn": 63,
+              "rightColumn": 64,
               "dynamicHeight": "AUTO_HEIGHT",
               "widgetId": "5y6iietino",
               "minWidth": 450,
@@ -307,10 +313,10 @@
               "renderMode": "CANVAS",
               "isLoading": false,
               "responsiveBehavior": "fill",
-              "originalTopRow": 58,
+              "originalTopRow": 54,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "maxDynamicHeight": 9000,
-              "originalBottomRow": 83,
+              "originalBottomRow": 79,
               "minDynamicHeight": 10
             },
             {
@@ -368,7 +374,7 @@
               "originalTopRow": 3,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "maxDynamicHeight": 9000,
-              "originalBottomRow": 7,
+              "originalBottomRow": 8,
               "fontSize": "1rem",
               "minDynamicHeight": 4
             },
@@ -441,7 +447,7 @@
               },
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "columnUpdatedAt": 1681859490079,
-              "originalBottomRow": 49,
+              "originalBottomRow": 50,
               "primaryColumnId": "SongID",
               "defaultSelectedRowIndices": [
                 0
@@ -575,7 +581,7 @@
               "horizontalAlignment": "LEFT",
               "isVisibleSearch": true,
               "responsiveBehavior": "fill",
-              "originalTopRow": 11,
+              "originalTopRow": 12,
               "isVisiblePagination": true,
               "verticalAlignment": "CENTER"
             },
@@ -642,9 +648,9 @@
                   "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
                 }
               },
-              "originalTopRow": 49,
+              "originalTopRow": 50,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "originalBottomRow": 53,
+              "originalBottomRow": 54,
               "buttonVariant": "PRIMARY"
             },
             {

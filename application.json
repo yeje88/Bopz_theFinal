@@ -27,14 +27,6 @@
     {
       "id": "Listener Profile",
       "isDefault": false
-    },
-    {
-      "id": "Listener Subscription Type",
-      "isDefault": false
-    },
-    {
-      "id": "Listener Playlist Song",
-      "isDefault": false
     }
   ],
   "viewMode": false,

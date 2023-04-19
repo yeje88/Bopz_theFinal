@@ -7,7 +7,7 @@
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "web:4000/l/addPlaylist?Name={{Playlist_name.text}}&Description={{Playlist_Description.text}}&ListenerID={{appsmith.URL.queryParams.ListenerID}}"
+        "url": "web:4000/l/addPlaylist"
       },
       "invalids": [],
       "messages": [],
@@ -30,7 +30,7 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "",
+      "body": "{{new_playlist.data}}",
       "bodyFormData": [],
       "httpMethod": "POST",
       "selfReferencingDataPaths": [],
@@ -40,18 +40,23 @@
         }
       ],
       "formData": {
-        "apiContentType": "none"
+        "apiContentType": "application/json"
       }
     },
     "executeOnLoad": false,
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      },
+      {
+        "key": "datasourceUrl"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "Playlist_Description.text",
-      "Playlist_name.text",
-      "appsmith.URL.queryParams.ListenerID"
+      "new_playlist.data"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

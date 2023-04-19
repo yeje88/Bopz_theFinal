@@ -561,10 +561,10 @@
               "renderMode": "CANVAS",
               "isLoading": false,
               "responsiveBehavior": "fill",
-              "originalTopRow": 66,
+              "originalTopRow": 67,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "maxDynamicHeight": 9000,
-              "originalBottomRow": 97,
+              "originalBottomRow": 98,
               "minDynamicHeight": 10
             },
             {
@@ -858,7 +858,7 @@
                   "index": 0,
                   "menuItems": {},
                   "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-                  "onClick": "{{navigateTo('Listener Home',{PlaylistID: appsmith.URL.queryParams.PlaylistID,\n\tListenerID: appsmith.URL.queryParams.ListenerID,\n\tPlaylistName: appsmith.URL.queryParams.PlaylistName}, 'SAME_WINDOW')}}"
+                  "onClick": "{{navigateTo('Listener Home',{PlaylistID: appsmith.URL.queryParams.PlaylistID,\n\tListenerUsername: appsmith.URL.queryParams.ListenerUsername,\n\t\tListenerID: appsmith.URL.queryParams.ListenerID,\n\tPlaylistName: appsmith.URL.queryParams.PlaylistName}, 'SAME_WINDOW')}}"
                 }
               },
               "type": "BUTTON_GROUP_WIDGET",
@@ -1263,7 +1263,7 @@
     ],
     "userPermissions": [],
     "policies": [],
-    "isHidden": false
+    "isHidden": true
   },
   "deleted": false,
   "gitSyncId": "643f4a791c081746975ca686_643f4e161c081746975ca693"

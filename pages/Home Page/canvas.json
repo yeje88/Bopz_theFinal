@@ -248,7 +248,7 @@
                       "type": "SELECT_WIDGET",
                       "serverSideFiltering": false,
                       "hideCard": false,
-                      "defaultOptionValue": "GREEN",
+                      "defaultOptionValue": "",
                       "animateLoading": true,
                       "parentColumnSpace": 5.59375,
                       "dynamicTriggerPathList": [],
@@ -398,8 +398,8 @@
               "searchTags": [
                 "group"
               ],
-              "topRow": 35,
-              "bottomRow": 76,
+              "topRow": 36,
+              "bottomRow": 77,
               "parentRowSpace": 10,
               "type": "FORM_WIDGET",
               "hideCard": false,
@@ -615,7 +615,7 @@
                       "type": "SELECT_WIDGET",
                       "serverSideFiltering": false,
                       "hideCard": false,
-                      "defaultOptionValue": "GREEN",
+                      "defaultOptionValue": "",
                       "animateLoading": true,
                       "parentColumnSpace": 5.59375,
                       "dynamicTriggerPathList": [],
@@ -688,10 +688,10 @@
               "renderMode": "CANVAS",
               "isLoading": false,
               "responsiveBehavior": "fill",
-              "originalTopRow": 35,
+              "originalTopRow": 36,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "maxDynamicHeight": 9000,
-              "originalBottomRow": 76,
+              "originalBottomRow": 77,
               "minDynamicHeight": 10
             },
             {
@@ -763,7 +763,7 @@
     ],
     "userPermissions": [],
     "policies": [],
-    "isHidden": false
+    "isHidden": true
   },
   "deleted": false,
   "gitSyncId": "643f4a791c081746975ca686_643f4a791c081746975ca688"

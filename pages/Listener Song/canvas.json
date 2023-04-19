@@ -163,7 +163,7 @@
               "resetFormOnClick": false,
               "boxShadow": "none",
               "widgetName": "Button1",
-              "onClick": "{{navigateTo('Listener Playlist',{PlaylistID: appsmith.URL.queryParams.PlaylistID,\n\tListenerID: appsmith.URL.queryParams.ListenerID,\n\tPlaylistName: appsmith.URL.queryParams.PlaylistName}, 'SAME_WINDOW')}}",
+              "onClick": "{{navigateTo('Listener Playlist',{PlaylistID: appsmith.URL.queryParams.PlaylistID,\n\t\tListenerUsername: appsmith.URL.queryParams.ListenerUsername,\n\tListenerID: appsmith.URL.queryParams.ListenerID,\n\tPlaylistName: appsmith.URL.queryParams.PlaylistName}, 'SAME_WINDOW')}}",
               "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
               "displayName": "Button",
               "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
@@ -227,7 +227,7 @@
     ],
     "userPermissions": [],
     "policies": [],
-    "isHidden": false
+    "isHidden": true
   },
   "deleted": false,
   "gitSyncId": "6440043450f2ce5995d33b63_64404f8c1747207d812af918"

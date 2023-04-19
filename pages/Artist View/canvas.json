@@ -1566,7 +1566,7 @@
                       "resetFormOnClick": false,
                       "boxShadow": "none",
                       "widgetName": "Button2",
-                      "onClick": "{{navigateTo('Artist Updates',{ArtistID: appsmith.URL.queryParams.ArtistID,\n\tArtistName: appsmith.URL.queryParams.ArtistName}, 'SAME_WINDOW')}}",
+                      "onClick": "{{navigateTo('Artist Update',{ArtistID: appsmith.URL.queryParams.ArtistID,\n\tArtistName: appsmith.URL.queryParams.ArtistName}, 'SAME_WINDOW')}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "displayName": "Button",
                       "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",

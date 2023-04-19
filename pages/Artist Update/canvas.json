@@ -734,7 +734,38 @@
             }
           ]
         },
-        "layoutOnLoadActions": [],
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Artist Update_get_artist_album",
+              "name": "get_artist_album",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "appsmith.URL.queryParams.ArtistID"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Artist Update_get_artist_song",
+              "name": "get_artist_song",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "appsmith.URL.queryParams.ArtistID"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Artist Update_get_genres",
+              "name": "get_genres",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
         "id": "Artist Update",

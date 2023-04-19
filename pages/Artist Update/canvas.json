@@ -99,7 +99,11 @@
               "defaultOptionValue": "",
               "animateLoading": true,
               "parentColumnSpace": 12.34375,
-              "dynamicTriggerPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onOptionChange"
+                }
+              ],
               "leftColumn": 5,
               "dynamicBindingPathList": [
                 {
@@ -134,13 +138,14 @@
               "responsiveBehavior": "fill",
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "maxDynamicHeight": 9000,
+              "onOptionChange": "{{get_artist_song.run()}}",
               "minDynamicHeight": 4
             },
             {
               "resetFormOnClick": false,
               "boxShadow": "none",
               "widgetName": "Button1",
-              "onClick": "{{delete_artist_song.run(() => showAlert('Song was deleted'), () => showAlert('Song failed to delete'))}}",
+              "onClick": "{{delete_artist_song.run(() => get_artist_song.run(), () => showAlert('Song failed to delete'))}}",
               "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
               "displayName": "Button",
               "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
@@ -260,7 +265,7 @@
               "shouldScrollContents": true,
               "animateLoading": true,
               "parentColumnSpace": 12.34375,
-              "leftColumn": 33,
+              "leftColumn": 28,
               "dynamicBindingPathList": [
                 {
                   "key": "borderRadius"
@@ -342,7 +347,7 @@
                       "resetFormOnClick": true,
                       "boxShadow": "none",
                       "widgetName": "add_new",
-                      "onClick": "{{add_new_song.run(() => showAlert('Song successfully added'), () => showAlert('Song failed to add'))}}",
+                      "onClick": "{{add_new_song.run(() => get_artist_song.run(), () => showAlert('Song failed to add'))}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "displayName": "Button",
                       "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
@@ -717,7 +722,7 @@
               "key": "orwmr4xybi",
               "backgroundColor": "#FFFFFF",
               "isDeprecated": false,
-              "rightColumn": 57,
+              "rightColumn": 62,
               "dynamicHeight": "AUTO_HEIGHT",
               "widgetId": "1142mz88y9",
               "minWidth": 450,

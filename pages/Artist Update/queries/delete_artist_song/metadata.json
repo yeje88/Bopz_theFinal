@@ -7,7 +7,7 @@
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "web:4000/a/RemoveSong/{{song_id_for_delete.selectedOptionValue}}"
+        "url": "web:4000/a/removeSong/{{song_id_for_delete.selectedOptionValue}}"
       },
       "invalids": [],
       "messages": [],

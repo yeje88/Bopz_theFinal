@@ -1,0 +1,58 @@
+{
+  "pages": [
+    {
+      "id": "Home Page",
+      "isDefault": true
+    },
+    {
+      "id": "Listener Home",
+      "isDefault": false
+    },
+    {
+      "id": "Listener Playlist",
+      "isDefault": false
+    },
+    {
+      "id": "Listener Settings",
+      "isDefault": false
+    },
+    {
+      "id": "Artist Updates",
+      "isDefault": false
+    },
+    {
+      "id": "Artist View",
+      "isDefault": false
+    },
+    {
+      "id": "Listener Profile",
+      "isDefault": false
+    },
+    {
+      "id": "Listener Subscription Type",
+      "isDefault": false
+    },
+    {
+      "id": "Listener Playlist Song",
+      "isDefault": false
+    }
+  ],
+  "viewMode": false,
+  "appIsExample": false,
+  "unreadCommentThreads": 0,
+  "color": "#E4D8CC",
+  "icon": "arrow-up",
+  "unpublishedAppLayout": {
+    "type": "FLUID"
+  },
+  "publishedAppLayout": {
+    "type": "FLUID"
+  },
+  "unpublishedCustomJSLibs": [],
+  "publishedCustomJSLibs": [],
+  "evaluationVersion": 2,
+  "applicationVersion": 2,
+  "collapseInvisibleWidgets": true,
+  "isManualUpdate": false,
+  "deleted": false
+}

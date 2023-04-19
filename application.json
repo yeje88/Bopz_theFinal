@@ -23,6 +23,10 @@
     {
       "id": "Listener Song",
       "isDefault": false
+    },
+    {
+      "id": "Artist Update",
+      "isDefault": false
     }
   ],
   "viewMode": false,

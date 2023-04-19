@@ -1252,7 +1252,7 @@
                       "resetFormOnClick": false,
                       "boxShadow": "none",
                       "widgetName": "Button1CopyCopy",
-                      "onClick": "{{get_all_songs.run()}}",
+                      "onClick": "{{get_artist_song.run()}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "displayName": "Button",
                       "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
@@ -1807,22 +1807,13 @@
                           "key": "tableData"
                         },
                         {
-                          "key": "primaryColumns.AlbumID.computedValue"
-                        },
-                        {
                           "key": "primaryColumns.ArtistID.computedValue"
                         },
                         {
-                          "key": "primaryColumns.GenreID.computedValue"
-                        },
-                        {
-                          "key": "primaryColumns.Length.computedValue"
-                        },
-                        {
-                          "key": "primaryColumns.SongID.computedValue"
-                        },
-                        {
                           "key": "primaryColumns.Title.computedValue"
+                        },
+                        {
+                          "key": "primaryColumns.SUM_ListenerPlays_TimesPlayed_.computedValue"
                         }
                       ],
                       "needsHeightForContent": true,
@@ -1860,7 +1851,7 @@
                         }
                       },
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "columnUpdatedAt": 1681921569160,
+                      "columnUpdatedAt": 1681948210712,
                       "originalBottomRow": 124,
                       "defaultSelectedRowIndices": [
                         0
@@ -1869,11 +1860,8 @@
                       "defaultPageSize": 0,
                       "columnOrder": [
                         "Title",
-                        "AlbumID",
                         "ArtistID",
-                        "GenreID",
-                        "Length",
-                        "SongID"
+                        "SUM_ListenerPlays_TimesPlayed_"
                       ],
                       "dynamicPropertyPathList": [],
                       "displayName": "Table",
@@ -1889,35 +1877,6 @@
                       "dynamicTriggerPathList": [],
                       "borderWidth": "1",
                       "primaryColumns": {
-                        "AlbumID": {
-                          "allowCellWrapping": false,
-                          "index": 0,
-                          "width": 150,
-                          "originalId": "AlbumID",
-                          "id": "AlbumID",
-                          "alias": "AlbumID",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "number",
-                          "textColor": "",
-                          "textSize": "0.875rem",
-                          "fontStyle": "",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
-                          "isDisabled": false,
-                          "isCellEditable": false,
-                          "isEditable": false,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "AlbumID",
-                          "isSaveVisible": true,
-                          "isDiscardVisible": true,
-                          "computedValue": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"AlbumID\"]))}}",
-                          "sticky": "",
-                          "validation": {},
-                          "cellBackground": ""
-                        },
                         "ArtistID": {
                           "allowCellWrapping": false,
                           "index": 1,
@@ -1943,93 +1902,6 @@
                           "isSaveVisible": true,
                           "isDiscardVisible": true,
                           "computedValue": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"ArtistID\"]))}}",
-                          "sticky": "",
-                          "validation": {},
-                          "cellBackground": ""
-                        },
-                        "GenreID": {
-                          "allowCellWrapping": false,
-                          "index": 2,
-                          "width": 150,
-                          "originalId": "GenreID",
-                          "id": "GenreID",
-                          "alias": "GenreID",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "number",
-                          "textColor": "",
-                          "textSize": "0.875rem",
-                          "fontStyle": "",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
-                          "isDisabled": false,
-                          "isCellEditable": false,
-                          "isEditable": false,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "GenreID",
-                          "isSaveVisible": true,
-                          "isDiscardVisible": true,
-                          "computedValue": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"GenreID\"]))}}",
-                          "sticky": "",
-                          "validation": {},
-                          "cellBackground": ""
-                        },
-                        "Length": {
-                          "allowCellWrapping": false,
-                          "index": 3,
-                          "width": 150,
-                          "originalId": "Length",
-                          "id": "Length",
-                          "alias": "Length",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "number",
-                          "textColor": "",
-                          "textSize": "0.875rem",
-                          "fontStyle": "",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
-                          "isDisabled": false,
-                          "isCellEditable": false,
-                          "isEditable": false,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "Length",
-                          "isSaveVisible": true,
-                          "isDiscardVisible": true,
-                          "computedValue": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"Length\"]))}}",
-                          "sticky": "",
-                          "validation": {},
-                          "cellBackground": ""
-                        },
-                        "SongID": {
-                          "allowCellWrapping": false,
-                          "index": 4,
-                          "width": 150,
-                          "originalId": "SongID",
-                          "id": "SongID",
-                          "alias": "SongID",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "number",
-                          "textColor": "",
-                          "textSize": "0.875rem",
-                          "fontStyle": "",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
-                          "isDisabled": false,
-                          "isCellEditable": false,
-                          "isEditable": false,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "SongID",
-                          "isSaveVisible": true,
-                          "isDiscardVisible": true,
-                          "computedValue": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"SongID\"]))}}",
                           "sticky": "",
                           "validation": {},
                           "cellBackground": ""
@@ -2062,6 +1934,35 @@
                           "sticky": "",
                           "validation": {},
                           "cellBackground": ""
+                        },
+                        "SUM_ListenerPlays_TimesPlayed_": {
+                          "allowCellWrapping": false,
+                          "index": 1,
+                          "width": 150,
+                          "originalId": "SUM(ListenerPlays.TimesPlayed)",
+                          "id": "SUM_ListenerPlays_TimesPlayed_",
+                          "alias": "SUM(ListenerPlays.TimesPlayed)",
+                          "horizontalAlignment": "LEFT",
+                          "verticalAlignment": "CENTER",
+                          "columnType": "text",
+                          "textColor": "",
+                          "textSize": "0.875rem",
+                          "fontStyle": "",
+                          "enableFilter": true,
+                          "enableSort": true,
+                          "isVisible": true,
+                          "isDisabled": false,
+                          "isCellEditable": false,
+                          "isEditable": false,
+                          "isCellVisible": true,
+                          "isDerived": false,
+                          "label": "SUM(ListenerPlays.TimesPlayed)",
+                          "isSaveVisible": true,
+                          "isDiscardVisible": true,
+                          "computedValue": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"SUM(ListenerPlays.TimesPlayed)\"]))}}",
+                          "sticky": "",
+                          "validation": {},
+                          "cellBackground": ""
                         }
                       },
                       "key": "mv6a49jx2v",
@@ -2071,7 +1972,7 @@
                       "textSize": "0.875rem",
                       "widgetId": "nusc846bso",
                       "minWidth": 450,
-                      "tableData": "{{get_all_songs.data}}",
+                      "tableData": "{{get_artist_song.data}}",
                       "label": "Data",
                       "searchKey": "",
                       "parentId": "9goedlhfr0",
@@ -2125,14 +2026,6 @@
         },
         "layoutOnLoadActions": [
           [
-            {
-              "id": "Artist View_get_all_songs",
-              "name": "get_all_songs",
-              "confirmBeforeExecute": false,
-              "pluginType": "API",
-              "jsonPathKeys": [],
-              "timeoutInMillisecond": 10000
-            },
             {
               "id": "Artist View_get_artist_album",
               "name": "get_artist_album",

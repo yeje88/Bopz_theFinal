@@ -363,7 +363,7 @@
               "parentRowSpace": 10,
               "groupButtons": {
                 "groupButton1": {
-                  "label": "Home",
+                  "label": "Back",
                   "id": "groupButton1",
                   "widgetId": "",
                   "buttonType": "SIMPLE",

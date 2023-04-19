@@ -27,6 +27,14 @@
     {
       "id": "Listener Profile",
       "isDefault": false
+    },
+    {
+      "id": "Create Playlist",
+      "isDefault": false
+    },
+    {
+      "id": "Listener Song",
+      "isDefault": false
     }
   ],
   "viewMode": false,

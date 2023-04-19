@@ -1,7 +1,7 @@
 {
   "unpublishedPage": {
-    "name": "Listener Home",
-    "slug": "listener-home",
+    "name": "Create Playlist",
+    "slug": "create-playlist",
     "layouts": [
       {
         "viewMode": false,
@@ -13,20 +13,85 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 1000,
+          "bottomRow": 1090,
           "containerStyle": "none",
-          "snapRows": 73,
+          "snapRows": 54,
           "parentRowSpace": 1,
           "type": "CANVAS_WIDGET",
           "canExtend": true,
           "version": 77,
-          "minHeight": 750,
+          "minHeight": 560,
           "parentColumnSpace": 1,
           "dynamicBindingPathList": [],
           "leftColumn": 0,
           "children": [
             {
-              "widgetName": "homepage_title",
+              "boxShadow": "none",
+              "widgetName": "SongEntry",
+              "isFilterable": true,
+              "dynamicPropertyPathList": [],
+              "displayName": "Select",
+              "iconSVG": "/static/media/icon.bd99caba5853ad71e4b3d8daffacb3a2.svg",
+              "labelText": "Select Song",
+              "searchTags": [
+                "dropdown"
+              ],
+              "topRow": 57,
+              "bottomRow": 64,
+              "parentRowSpace": 10,
+              "labelWidth": 5,
+              "type": "SELECT_WIDGET",
+              "serverSideFiltering": false,
+              "hideCard": false,
+              "defaultOptionValue": "",
+              "animateLoading": true,
+              "parentColumnSpace": 12.5546875,
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onOptionChange"
+                }
+              ],
+              "leftColumn": 2,
+              "dynamicBindingPathList": [
+                {
+                  "key": "accentColor"
+                },
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "options"
+                }
+              ],
+              "labelPosition": "Top",
+              "options": "{{get_songs.data.map( p => ({label: p.Title, value: p.SongID}))}}",
+              "placeholderText": "Select option",
+              "isDisabled": false,
+              "key": "mj9jynb47o",
+              "labelTextSize": "0.875rem",
+              "isRequired": false,
+              "isDeprecated": false,
+              "rightColumn": 60,
+              "dynamicHeight": "FIXED",
+              "widgetId": "mgjhzbhya7",
+              "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+              "minWidth": 450,
+              "isVisible": true,
+              "version": 1,
+              "parentId": "0",
+              "labelAlignment": "left",
+              "renderMode": "CANVAS",
+              "isLoading": false,
+              "responsiveBehavior": "fill",
+              "originalTopRow": 57,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "maxDynamicHeight": 9000,
+              "originalBottomRow": 64,
+              "onOptionChange": "{{resetWidget(\"add_song_param\",true)}}",
+              "minDynamicHeight": 4
+            },
+            {
+              "widgetName": "playlistsong_title",
               "displayName": "Text",
               "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
               "searchTags": [
@@ -34,8 +99,8 @@
                 "paragraph",
                 "label"
               ],
-              "topRow": 2,
-              "bottomRow": 7,
+              "topRow": 3,
+              "bottomRow": 10,
               "parentRowSpace": 10,
               "type": "TEXT_WIDGET",
               "hideCard": false,
@@ -44,7 +109,7 @@
               "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
               "parentColumnSpace": 17.125,
               "dynamicTriggerPathList": [],
-              "leftColumn": 7,
+              "leftColumn": 0,
               "dynamicBindingPathList": [
                 {
                   "key": "truncateButtonColor"
@@ -61,13 +126,13 @@
               ],
               "shouldTruncate": false,
               "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-              "text": "Hello {{appsmith.URL.queryParams.ListenerUsername}} !",
+              "text": "Playlist: {{appsmith.URL.queryParams.PlaylistName}}\n\n{{appsmith.URL.queryParams.PlaylistDescription}}",
               "key": "2x8nn40l1q",
               "isDeprecated": false,
-              "rightColumn": 19,
+              "rightColumn": 15,
               "textAlign": "LEFT",
               "dynamicHeight": "AUTO_HEIGHT",
-              "widgetId": "5r1pm2frgw",
+              "widgetId": "dp6gspcyzd",
               "minWidth": 450,
               "isVisible": true,
               "fontStyle": "BOLD",
@@ -77,142 +142,307 @@
               "renderMode": "CANVAS",
               "isLoading": false,
               "responsiveBehavior": "fill",
-              "originalTopRow": 2,
+              "originalTopRow": 3,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "maxDynamicHeight": 9000,
-              "originalBottomRow": 9,
+              "originalBottomRow": 10,
               "fontSize": "1rem",
               "minDynamicHeight": 4
             },
             {
-              "resetFormOnClick": false,
-              "boxShadow": "none",
-              "widgetName": "listenerprofile_button",
-              "onClick": "{{navigateTo('Listener Profile',{ListenerID: appsmith.URL.queryParams.ListenerID,\n\tListenerUsername: appsmith.URL.queryParams.ListenerUsername}, 'SAME_WINDOW')}}",
-              "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-              "displayName": "Button",
-              "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
-              "searchTags": [
-                "click",
-                "submit"
-              ],
-              "topRow": 8,
-              "bottomRow": 12,
-              "parentRowSpace": 10,
-              "type": "BUTTON_WIDGET",
-              "hideCard": false,
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "borderColor": "#E0DEDE",
+              "isVisibleDownload": true,
+              "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
+              "topRow": 14,
+              "isSortable": true,
+              "type": "TABLE_WIDGET_V2",
+              "inlineEditingSaveOption": "ROW_LEVEL",
               "animateLoading": true,
-              "parentColumnSpace": 9.875,
-              "dynamicTriggerPathList": [
-                {
-                  "key": "onClick"
-                }
-              ],
-              "leftColumn": 7,
               "dynamicBindingPathList": [
                 {
-                  "key": "buttonColor"
+                  "key": "accentColor"
                 },
                 {
                   "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                },
+                {
+                  "key": "tableData"
+                },
+                {
+                  "key": "primaryColumns.Length.computedValue"
+                },
+                {
+                  "key": "primaryColumns.SongID.computedValue"
+                },
+                {
+                  "key": "primaryColumns.Title.computedValue"
                 }
               ],
-              "text": "Listener Profile",
-              "isDisabled": false,
-              "key": "kkajftvmuj",
-              "isDeprecated": false,
-              "rightColumn": 23,
-              "isDefaultClickDisabled": true,
-              "widgetId": "971z7naqvh",
-              "minWidth": 120,
+              "needsHeightForContent": true,
+              "leftColumn": 0,
+              "delimiter": ",",
+              "defaultSelectedRowIndex": "0",
+              "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+              "isVisibleFilters": true,
               "isVisible": true,
-              "recaptchaType": "V3",
+              "enableClientSideSearch": true,
               "version": 1,
+              "totalRecordsCount": 0,
+              "isLoading": false,
+              "childStylesheet": {
+                "button": {
+                  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                  "boxShadow": "none"
+                },
+                "menuButton": {
+                  "menuColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                  "boxShadow": "none"
+                },
+                "iconButton": {
+                  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                  "boxShadow": "none"
+                },
+                "editActions": {
+                  "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                  "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+                }
+              },
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "columnUpdatedAt": 1681859490079,
+              "originalBottomRow": 52,
+              "primaryColumnId": "SongID",
+              "defaultSelectedRowIndices": [
+                0
+              ],
+              "widgetName": "song_table",
+              "defaultPageSize": 0,
+              "columnOrder": [
+                "SongID",
+                "Title",
+                "Length"
+              ],
+              "dynamicPropertyPathList": [],
+              "displayName": "Table",
+              "bottomRow": 52,
+              "columnWidthMap": {
+                "task": 245,
+                "step": 70,
+                "status": 85
+              },
+              "parentRowSpace": 10,
+              "hideCard": false,
+              "parentColumnSpace": 17.125,
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onRowSelected"
+                }
+              ],
+              "borderWidth": "1",
+              "primaryColumns": {
+                "Length": {
+                  "allowCellWrapping": false,
+                  "index": 0,
+                  "width": 150,
+                  "originalId": "Length",
+                  "id": "Length",
+                  "alias": "Length",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "number",
+                  "textColor": "",
+                  "textSize": "0.875rem",
+                  "fontStyle": "",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": false,
+                  "label": "Length",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "{{song_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"Length\"]))}}",
+                  "sticky": "",
+                  "validation": {},
+                  "cellBackground": ""
+                },
+                "SongID": {
+                  "allowCellWrapping": false,
+                  "index": 1,
+                  "width": 150,
+                  "originalId": "SongID",
+                  "id": "SongID",
+                  "alias": "SongID",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "number",
+                  "textColor": "",
+                  "textSize": "0.875rem",
+                  "fontStyle": "",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": false,
+                  "label": "SongID",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "{{song_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"SongID\"]))}}",
+                  "sticky": "",
+                  "validation": {},
+                  "cellBackground": ""
+                },
+                "Title": {
+                  "allowCellWrapping": false,
+                  "index": 2,
+                  "width": 150,
+                  "originalId": "Title",
+                  "id": "Title",
+                  "alias": "Title",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "text",
+                  "textColor": "",
+                  "textSize": "0.875rem",
+                  "fontStyle": "",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": false,
+                  "label": "Title",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "{{song_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"Title\"]))}}",
+                  "sticky": "",
+                  "validation": {},
+                  "cellBackground": ""
+                }
+              },
+              "onRowSelected": "{{resetWidget(\"Audio1\",true)}}",
+              "key": "8ice3j6f83",
+              "canFreezeColumn": true,
+              "isDeprecated": false,
+              "rightColumn": 64,
+              "textSize": "0.875rem",
+              "widgetId": "0niy8lwdta",
+              "minWidth": 450,
+              "tableData": "{{playlist_songs.data}}",
+              "label": "Data",
+              "searchKey": "",
               "parentId": "0",
               "renderMode": "CANVAS",
-              "isLoading": false,
-              "responsiveBehavior": "hug",
-              "originalTopRow": 10,
-              "disabledWhenInvalid": false,
-              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "originalBottomRow": 14,
-              "buttonVariant": "PRIMARY",
-              "placement": "CENTER"
+              "horizontalAlignment": "LEFT",
+              "isVisibleSearch": true,
+              "responsiveBehavior": "fill",
+              "originalTopRow": 14,
+              "isVisiblePagination": true,
+              "verticalAlignment": "CENTER"
             },
             {
-              "resetFormOnClick": false,
               "boxShadow": "none",
-              "widgetName": "Log_Out_Button",
-              "onClick": "{{navigateTo('Home Page', {}, 'SAME_WINDOW')}}",
-              "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-              "displayName": "Button",
-              "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
+              "widgetName": "home_buttonCopy",
+              "isCanvas": false,
+              "displayName": "Button Group",
+              "iconSVG": "/static/media/icon.d6773218cfb61dcfa5f460d43371e30d.svg",
               "searchTags": [
                 "click",
                 "submit"
               ],
-              "topRow": 56,
-              "bottomRow": 60,
+              "topRow": 52,
+              "bottomRow": 56,
               "parentRowSpace": 10,
-              "type": "BUTTON_WIDGET",
+              "groupButtons": {
+                "groupButton1": {
+                  "label": "Back",
+                  "id": "groupButton1",
+                  "widgetId": "",
+                  "buttonType": "SIMPLE",
+                  "placement": "CENTER",
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "index": 0,
+                  "menuItems": {},
+                  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "onClick": "{{navigateTo('Listener Home',{ListenerID: appsmith.URL.queryParams.ListenerID}, 'SAME_WINDOW')}}"
+                }
+              },
+              "type": "BUTTON_GROUP_WIDGET",
               "hideCard": false,
               "animateLoading": true,
-              "parentColumnSpace": 13.515625,
+              "parentColumnSpace": 17.125,
               "dynamicTriggerPathList": [
                 {
-                  "key": "onClick"
+                  "key": "groupButtons.groupButton1.onClick"
                 }
               ],
-              "leftColumn": 7,
+              "leftColumn": 0,
               "dynamicBindingPathList": [
                 {
-                  "key": "buttonColor"
+                  "key": "borderRadius"
                 },
                 {
-                  "key": "borderRadius"
+                  "key": "groupButtons.groupButton1.buttonColor"
                 }
               ],
-              "text": "Log Out",
-              "isDisabled": false,
-              "key": "zktxgjq7ly",
+              "key": "obo180neqx",
+              "orientation": "horizontal",
               "isDeprecated": false,
-              "rightColumn": 23,
-              "isDefaultClickDisabled": true,
-              "widgetId": "fdyua30l5k",
-              "minWidth": 120,
+              "rightColumn": 18,
+              "widgetId": "4ps5wkww38",
+              "minWidth": 450,
               "isVisible": true,
-              "recaptchaType": "V3",
               "version": 1,
               "parentId": "0",
               "renderMode": "CANVAS",
               "isLoading": false,
-              "responsiveBehavior": "hug",
-              "originalTopRow": 58,
-              "disabledWhenInvalid": false,
+              "responsiveBehavior": "fill",
+              "childStylesheet": {
+                "button": {
+                  "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+                }
+              },
+              "originalTopRow": 52,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "originalBottomRow": 62,
-              "buttonVariant": "PRIMARY",
-              "placement": "CENTER"
+              "originalBottomRow": 56,
+              "buttonVariant": "PRIMARY"
             },
             {
               "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
               "borderColor": "#E0DEDE",
-              "widgetName": "new_playlist",
+              "widgetName": "add_song_param",
               "isCanvas": true,
               "displayName": "Form",
               "iconSVG": "/static/media/icon.ea3e08d130e59c56867ae40114c10eed.svg",
               "searchTags": [
                 "group"
               ],
-              "topRow": 14,
-              "bottomRow": 53,
+              "topRow": 66,
+              "bottomRow": 109,
               "parentRowSpace": 10,
               "type": "FORM_WIDGET",
               "hideCard": false,
               "shouldScrollContents": true,
               "animateLoading": true,
               "parentColumnSpace": 13.5,
-              "leftColumn": 43,
+              "leftColumn": 1,
               "dynamicBindingPathList": [
                 {
                   "key": "borderRadius"
@@ -223,10 +453,10 @@
               ],
               "children": [
                 {
-                  "widgetName": "Canvas1",
+                  "widgetName": "Canvas1Copy",
                   "displayName": "Canvas",
                   "topRow": 0,
-                  "bottomRow": 390,
+                  "bottomRow": 430,
                   "parentRowSpace": 1,
                   "type": "CANVAS_WIDGET",
                   "canExtend": false,
@@ -237,7 +467,7 @@
                   "dynamicBindingPathList": [],
                   "children": [
                     {
-                      "widgetName": "Text1",
+                      "widgetName": "Text1Copy",
                       "displayName": "Text",
                       "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
                       "searchTags": [
@@ -245,15 +475,15 @@
                         "paragraph",
                         "label"
                       ],
-                      "topRow": 1,
-                      "bottomRow": 5,
+                      "topRow": 0,
+                      "bottomRow": 4,
                       "type": "TEXT_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
                       "overflow": "NONE",
                       "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
                       "dynamicTriggerPathList": [],
-                      "leftColumn": 2,
+                      "leftColumn": 1,
                       "dynamicBindingPathList": [
                         {
                           "key": "truncateButtonColor"
@@ -267,34 +497,34 @@
                       ],
                       "shouldTruncate": false,
                       "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "text": "Add a Playlist",
+                      "text": "Add a Song",
                       "key": "svpcn14fbt",
                       "isDeprecated": false,
-                      "rightColumn": 64,
+                      "rightColumn": 40,
                       "textAlign": "LEFT",
                       "dynamicHeight": "AUTO_HEIGHT",
-                      "widgetId": "10fogmmjx2",
+                      "widgetId": "hgc8vyo57t",
                       "minWidth": 450,
                       "isVisible": true,
                       "fontStyle": "BOLD",
                       "textColor": "#231F20",
                       "version": 1,
-                      "parentId": "2yy1velo5y",
+                      "parentId": "mjfhj46uq0",
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "responsiveBehavior": "fill",
                       "originalTopRow": 1,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
-                      "originalBottomRow": 7,
+                      "originalBottomRow": 5,
                       "fontSize": "1.25rem",
                       "minDynamicHeight": 4
                     },
                     {
                       "resetFormOnClick": true,
                       "boxShadow": "none",
-                      "widgetName": "Button2",
-                      "onClick": "{{add_playlist.run(() => listener_playlist.run(), () => {})}}",
+                      "widgetName": "Button2Copy",
+                      "onClick": "{{add_song.run(() => playlist_songs.run(), () => showAlert('Invalid, try again'))}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "displayName": "Button",
                       "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
@@ -302,8 +532,8 @@
                         "click",
                         "submit"
                       ],
-                      "topRow": 33,
-                      "bottomRow": 37,
+                      "topRow": 37,
+                      "bottomRow": 41,
                       "type": "BUTTON_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
@@ -312,7 +542,7 @@
                           "key": "onClick"
                         }
                       ],
-                      "leftColumn": 34,
+                      "leftColumn": 39,
                       "dynamicBindingPathList": [
                         {
                           "key": "buttonColor"
@@ -321,25 +551,25 @@
                           "key": "borderRadius"
                         }
                       ],
-                      "text": "Submit",
+                      "text": "Add Song",
                       "isDisabled": false,
                       "key": "dcsx4ffzk2",
                       "isDeprecated": false,
-                      "rightColumn": 61,
+                      "rightColumn": 62,
                       "isDefaultClickDisabled": true,
-                      "widgetId": "rxbc43zgtz",
+                      "widgetId": "13g4wpd3uo",
                       "minWidth": 120,
                       "isVisible": true,
                       "recaptchaType": "V3",
                       "version": 1,
-                      "parentId": "2yy1velo5y",
+                      "parentId": "mjfhj46uq0",
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "responsiveBehavior": "hug",
-                      "originalTopRow": 35,
+                      "originalTopRow": 20,
                       "disabledWhenInvalid": true,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "originalBottomRow": 39,
+                      "originalBottomRow": 24,
                       "buttonVariant": "PRIMARY",
                       "placement": "CENTER"
                     },
@@ -354,12 +584,12 @@
                         "click",
                         "submit"
                       ],
-                      "topRow": 33,
-                      "bottomRow": 37,
+                      "topRow": 37,
+                      "bottomRow": 41,
                       "type": "BUTTON_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
-                      "leftColumn": 12,
+                      "leftColumn": 3,
                       "dynamicBindingPathList": [
                         {
                           "key": "buttonColor"
@@ -372,89 +602,91 @@
                       "isDisabled": false,
                       "key": "dcsx4ffzk2",
                       "isDeprecated": false,
-                      "rightColumn": 34,
+                      "rightColumn": 19,
                       "isDefaultClickDisabled": true,
-                      "widgetId": "iics5sl0rq",
+                      "widgetId": "ihwttf34ec",
                       "minWidth": 120,
                       "isVisible": true,
                       "recaptchaType": "V3",
                       "version": 1,
-                      "parentId": "2yy1velo5y",
+                      "parentId": "mjfhj46uq0",
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "responsiveBehavior": "hug",
-                      "originalTopRow": 35,
+                      "originalTopRow": 20,
                       "disabledWhenInvalid": false,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "originalBottomRow": 39,
+                      "originalBottomRow": 24,
                       "buttonVariant": "SECONDARY",
                       "placement": "CENTER"
                     },
                     {
                       "boxShadow": "none",
-                      "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
-                      "topRow": 15,
-                      "labelWidth": 5,
-                      "type": "INPUT_WIDGET_V2",
-                      "animateLoading": true,
-                      "resetOnSubmit": true,
-                      "leftColumn": 0,
-                      "dynamicBindingPathList": [
-                        {
-                          "key": "accentColor"
-                        },
-                        {
-                          "key": "borderRadius"
-                        }
-                      ],
-                      "labelStyle": "",
-                      "inputType": "TEXT",
-                      "isDisabled": false,
-                      "isRequired": false,
-                      "dynamicHeight": "FIXED",
-                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "showStepArrows": false,
-                      "isVisible": true,
-                      "version": 2,
-                      "isLoading": false,
-                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "originalBottomRow": 20,
-                      "widgetName": "Name",
+                      "widgetName": "PlaylistID",
                       "displayName": "Input",
+                      "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
                       "searchTags": [
                         "form",
                         "text input",
                         "number",
                         "textarea"
                       ],
-                      "bottomRow": 21,
+                      "topRow": 5,
+                      "bottomRow": 13,
                       "parentRowSpace": 10,
+                      "labelWidth": 5,
                       "autoFocus": false,
+                      "type": "INPUT_WIDGET_V2",
                       "hideCard": false,
-                      "parentColumnSpace": 4.75,
+                      "animateLoading": true,
+                      "parentColumnSpace": 10.078125,
                       "dynamicTriggerPathList": [],
+                      "resetOnSubmit": true,
+                      "leftColumn": 38,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "accentColor"
+                        },
+                        {
+                          "key": "borderRadius"
+                        },
+                        {
+                          "key": "defaultText"
+                        }
+                      ],
                       "labelPosition": "Top",
-                      "key": "f9rjofb9tu",
+                      "labelStyle": "",
+                      "inputType": "TEXT",
+                      "isDisabled": false,
+                      "key": "1wrlev3zqb",
                       "labelTextSize": "0.875rem",
+                      "isRequired": false,
                       "isDeprecated": false,
-                      "rightColumn": 56,
-                      "widgetId": "xh52d97o2c",
-                      "errorMessage": "Not a valid name",
+                      "rightColumn": 58,
+                      "dynamicHeight": "FIXED",
+                      "widgetId": "flklekq9sq",
+                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "showStepArrows": false,
                       "minWidth": 450,
-                      "label": "Playlist Name",
-                      "parentId": "2yy1velo5y",
+                      "isVisible": true,
+                      "label": "Playlist ID",
+                      "version": 2,
+                      "parentId": "mjfhj46uq0",
                       "labelAlignment": "left",
                       "renderMode": "CANVAS",
+                      "isLoading": false,
                       "responsiveBehavior": "fill",
-                      "originalTopRow": 11,
+                      "originalTopRow": 106,
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
+                      "originalBottomRow": 113,
                       "iconAlign": "left",
-                      "defaultText": "",
+                      "defaultText": "{{appsmith.URL.queryParams.PlaylistID}}",
                       "minDynamicHeight": 4
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "Description",
+                      "widgetName": "SongID",
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
                       "searchTags": [
@@ -463,54 +695,121 @@
                         "number",
                         "textarea"
                       ],
-                      "topRow": 25,
-                      "bottomRow": 32,
+                      "topRow": 5,
+                      "bottomRow": 13,
                       "parentRowSpace": 10,
                       "labelWidth": 5,
                       "autoFocus": false,
                       "type": "INPUT_WIDGET_V2",
                       "hideCard": false,
                       "animateLoading": true,
-                      "parentColumnSpace": 4.75,
+                      "parentColumnSpace": 10.078125,
                       "dynamicTriggerPathList": [],
                       "resetOnSubmit": true,
-                      "leftColumn": 0,
+                      "leftColumn": 9,
                       "dynamicBindingPathList": [
                         {
                           "key": "accentColor"
                         },
                         {
                           "key": "borderRadius"
+                        },
+                        {
+                          "key": "defaultText"
                         }
                       ],
                       "labelPosition": "Top",
                       "labelStyle": "",
                       "inputType": "TEXT",
                       "isDisabled": false,
-                      "key": "f9rjofb9tu",
+                      "key": "1wrlev3zqb",
                       "labelTextSize": "0.875rem",
                       "isRequired": false,
                       "isDeprecated": false,
-                      "rightColumn": 55,
+                      "rightColumn": 29,
                       "dynamicHeight": "FIXED",
-                      "widgetId": "37noq5o47a",
+                      "widgetId": "pdcntoz9j7",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
                       "showStepArrows": false,
                       "minWidth": 450,
                       "isVisible": true,
-                      "label": "Playlist Description",
+                      "label": "Song ID",
                       "version": 2,
-                      "parentId": "2yy1velo5y",
+                      "parentId": "mjfhj46uq0",
                       "labelAlignment": "left",
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "responsiveBehavior": "fill",
-                      "originalTopRow": 21,
+                      "originalTopRow": 106,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
-                      "originalBottomRow": 31,
+                      "originalBottomRow": 113,
                       "iconAlign": "left",
-                      "defaultText": "",
+                      "defaultText": "{{SongEntry.value}}",
+                      "minDynamicHeight": 4
+                    },
+                    {
+                      "boxShadow": "none",
+                      "widgetName": "Name",
+                      "displayName": "Input",
+                      "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
+                      "searchTags": [
+                        "form",
+                        "text input",
+                        "number",
+                        "textarea"
+                      ],
+                      "topRow": 15,
+                      "bottomRow": 23,
+                      "parentRowSpace": 10,
+                      "labelWidth": 5,
+                      "autoFocus": false,
+                      "type": "INPUT_WIDGET_V2",
+                      "hideCard": false,
+                      "animateLoading": true,
+                      "parentColumnSpace": 10.078125,
+                      "dynamicTriggerPathList": [],
+                      "resetOnSubmit": true,
+                      "leftColumn": 9,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "accentColor"
+                        },
+                        {
+                          "key": "borderRadius"
+                        },
+                        {
+                          "key": "defaultText"
+                        }
+                      ],
+                      "labelPosition": "Top",
+                      "labelStyle": "",
+                      "inputType": "TEXT",
+                      "isDisabled": false,
+                      "key": "1wrlev3zqb",
+                      "labelTextSize": "0.875rem",
+                      "isRequired": false,
+                      "isDeprecated": false,
+                      "rightColumn": 29,
+                      "dynamicHeight": "FIXED",
+                      "widgetId": "1hjljv89tp",
+                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "showStepArrows": false,
+                      "minWidth": 450,
+                      "isVisible": true,
+                      "label": "Song Name",
+                      "version": 2,
+                      "parentId": "mjfhj46uq0",
+                      "labelAlignment": "left",
+                      "renderMode": "CANVAS",
+                      "isLoading": false,
+                      "responsiveBehavior": "fill",
+                      "originalTopRow": 106,
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                      "maxDynamicHeight": 9000,
+                      "originalBottomRow": 113,
+                      "iconAlign": "left",
+                      "defaultText": "{{SongEntry.key}}",
                       "minDynamicHeight": 4
                     },
                     {
@@ -524,18 +823,18 @@
                         "number",
                         "textarea"
                       ],
-                      "topRow": 7,
-                      "bottomRow": 14,
+                      "topRow": 15,
+                      "bottomRow": 23,
                       "parentRowSpace": 10,
                       "labelWidth": 5,
                       "autoFocus": false,
                       "type": "INPUT_WIDGET_V2",
                       "hideCard": false,
                       "animateLoading": true,
-                      "parentColumnSpace": 2.994384765625,
+                      "parentColumnSpace": 10.078125,
                       "dynamicTriggerPathList": [],
                       "resetOnSubmit": true,
-                      "leftColumn": 0,
+                      "leftColumn": 38,
                       "dynamicBindingPathList": [
                         {
                           "key": "accentColor"
@@ -551,20 +850,84 @@
                       "labelStyle": "",
                       "inputType": "TEXT",
                       "isDisabled": false,
-                      "key": "a4ktwvvmse",
+                      "key": "1wrlev3zqb",
                       "labelTextSize": "0.875rem",
                       "isRequired": false,
                       "isDeprecated": false,
-                      "rightColumn": 55,
+                      "rightColumn": 58,
                       "dynamicHeight": "FIXED",
-                      "widgetId": "c1eixles85",
+                      "widgetId": "6e69zl69bo",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
                       "showStepArrows": false,
                       "minWidth": 450,
                       "isVisible": true,
                       "label": "Listener ID",
                       "version": 2,
-                      "parentId": "2yy1velo5y",
+                      "parentId": "mjfhj46uq0",
+                      "labelAlignment": "left",
+                      "renderMode": "CANVAS",
+                      "isLoading": false,
+                      "responsiveBehavior": "fill",
+                      "originalTopRow": 106,
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                      "maxDynamicHeight": 9000,
+                      "originalBottomRow": 113,
+                      "iconAlign": "left",
+                      "defaultText": "{{appsmith.URL.queryParams.ListenerID}}",
+                      "minDynamicHeight": 4
+                    },
+                    {
+                      "boxShadow": "none",
+                      "widgetName": "Description",
+                      "displayName": "Input",
+                      "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
+                      "searchTags": [
+                        "form",
+                        "text input",
+                        "number",
+                        "textarea"
+                      ],
+                      "topRow": 26,
+                      "bottomRow": 33,
+                      "parentRowSpace": 10,
+                      "labelWidth": 5,
+                      "autoFocus": false,
+                      "type": "INPUT_WIDGET_V2",
+                      "hideCard": false,
+                      "animateLoading": true,
+                      "parentColumnSpace": 9.608154296875,
+                      "dynamicTriggerPathList": [],
+                      "resetOnSubmit": true,
+                      "leftColumn": 9,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "accentColor"
+                        },
+                        {
+                          "key": "borderRadius"
+                        },
+                        {
+                          "key": "defaultText"
+                        }
+                      ],
+                      "labelPosition": "Top",
+                      "labelStyle": "",
+                      "inputType": "TEXT",
+                      "isDisabled": false,
+                      "key": "1wrlev3zqb",
+                      "labelTextSize": "0.875rem",
+                      "isRequired": false,
+                      "isDeprecated": false,
+                      "rightColumn": 59,
+                      "dynamicHeight": "FIXED",
+                      "widgetId": "ifsbd521t0",
+                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "showStepArrows": false,
+                      "minWidth": 450,
+                      "isVisible": true,
+                      "label": "Description",
+                      "version": 2,
+                      "parentId": "mjfhj46uq0",
                       "labelAlignment": "left",
                       "renderMode": "CANVAS",
                       "isLoading": false,
@@ -572,7 +935,7 @@
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "maxDynamicHeight": 9000,
                       "iconAlign": "left",
-                      "defaultText": "{{appsmith.URL.queryParams.ListenerID}}",
+                      "defaultText": "{{appsmith.URL.queryParams.Description}}",
                       "minDynamicHeight": 4
                     }
                   ],
@@ -580,12 +943,12 @@
                   "isDeprecated": false,
                   "rightColumn": 324,
                   "detachFromLayout": true,
-                  "widgetId": "2yy1velo5y",
+                  "widgetId": "mjfhj46uq0",
                   "containerStyle": "none",
                   "minWidth": 450,
                   "isVisible": true,
                   "version": 1,
-                  "parentId": "q7x4vnx65f",
+                  "parentId": "tezf55i3y5",
                   "renderMode": "CANVAS",
                   "isLoading": false,
                   "responsiveBehavior": "fill",
@@ -599,397 +962,48 @@
               "isDeprecated": false,
               "rightColumn": 64,
               "dynamicHeight": "AUTO_HEIGHT",
-              "widgetId": "q7x4vnx65f",
+              "widgetId": "tezf55i3y5",
               "minWidth": 450,
               "isVisible": true,
               "parentId": "0",
               "renderMode": "CANVAS",
               "isLoading": false,
               "responsiveBehavior": "fill",
-              "originalTopRow": 14,
+              "originalTopRow": 66,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "maxDynamicHeight": 9000,
-              "originalBottomRow": 53,
+              "originalBottomRow": 109,
               "minDynamicHeight": 10
-            },
-            {
-              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
-              "borderColor": "#E0DEDE",
-              "widgetName": "Form1",
-              "isCanvas": true,
-              "displayName": "Form",
-              "iconSVG": "/static/media/icon.ea3e08d130e59c56867ae40114c10eed.svg",
-              "searchTags": [
-                "group"
-              ],
-              "topRow": 63,
-              "bottomRow": 100,
-              "parentRowSpace": 10,
-              "type": "FORM_WIDGET",
-              "hideCard": false,
-              "shouldScrollContents": true,
-              "animateLoading": true,
-              "parentColumnSpace": 10.078125,
-              "leftColumn": 7,
-              "dynamicBindingPathList": [
-                {
-                  "key": "borderRadius"
-                },
-                {
-                  "key": "boxShadow"
-                }
-              ],
-              "children": [
-                {
-                  "widgetName": "Canvas2",
-                  "displayName": "Canvas",
-                  "topRow": 0,
-                  "bottomRow": 370,
-                  "parentRowSpace": 1,
-                  "type": "CANVAS_WIDGET",
-                  "canExtend": false,
-                  "hideCard": true,
-                  "minHeight": 400,
-                  "parentColumnSpace": 1,
-                  "leftColumn": 0,
-                  "dynamicBindingPathList": [],
-                  "children": [
-                    {
-                      "boxShadow": "none",
-                      "widgetName": "DescriptionCopy",
-                      "displayName": "Input",
-                      "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
-                      "searchTags": [
-                        "form",
-                        "text input",
-                        "number",
-                        "textarea"
-                      ],
-                      "topRow": 17,
-                      "bottomRow": 24,
-                      "parentRowSpace": 10,
-                      "labelWidth": 5,
-                      "autoFocus": false,
-                      "type": "INPUT_WIDGET_V2",
-                      "hideCard": false,
-                      "animateLoading": true,
-                      "parentColumnSpace": 4.75,
-                      "dynamicTriggerPathList": [],
-                      "resetOnSubmit": true,
-                      "leftColumn": 5,
-                      "dynamicBindingPathList": [
-                        {
-                          "key": "accentColor"
-                        },
-                        {
-                          "key": "borderRadius"
-                        },
-                        {
-                          "key": "defaultText"
-                        }
-                      ],
-                      "labelPosition": "Top",
-                      "labelStyle": "",
-                      "inputType": "TEXT",
-                      "isDisabled": false,
-                      "key": "f9rjofb9tu",
-                      "labelTextSize": "0.875rem",
-                      "isRequired": false,
-                      "isDeprecated": false,
-                      "rightColumn": 60,
-                      "dynamicHeight": "FIXED",
-                      "widgetId": "c83jsq9dbh",
-                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "showStepArrows": false,
-                      "minWidth": 450,
-                      "isVisible": true,
-                      "label": "Playlist Description",
-                      "version": 2,
-                      "parentId": "1ldr6wsz7p",
-                      "labelAlignment": "left",
-                      "renderMode": "CANVAS",
-                      "isLoading": false,
-                      "responsiveBehavior": "fill",
-                      "originalTopRow": 17,
-                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "maxDynamicHeight": 9000,
-                      "originalBottomRow": 24,
-                      "iconAlign": "left",
-                      "defaultText": "{{select_playlist.description}}",
-                      "minDynamicHeight": 4
-                    },
-                    {
-                      "widgetName": "Text2",
-                      "displayName": "Text",
-                      "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
-                      "searchTags": [
-                        "typography",
-                        "paragraph",
-                        "label"
-                      ],
-                      "topRow": 1,
-                      "bottomRow": 5,
-                      "type": "TEXT_WIDGET",
-                      "hideCard": false,
-                      "animateLoading": true,
-                      "overflow": "NONE",
-                      "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-                      "dynamicTriggerPathList": [],
-                      "leftColumn": 2,
-                      "dynamicBindingPathList": [
-                        {
-                          "key": "truncateButtonColor"
-                        },
-                        {
-                          "key": "fontFamily"
-                        },
-                        {
-                          "key": "borderRadius"
-                        }
-                      ],
-                      "shouldTruncate": false,
-                      "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "text": "Select Playlist",
-                      "key": "uhfzts9q8z",
-                      "isDeprecated": false,
-                      "rightColumn": 59,
-                      "textAlign": "LEFT",
-                      "dynamicHeight": "AUTO_HEIGHT",
-                      "widgetId": "siy0zwxsb9",
-                      "minWidth": 450,
-                      "isVisible": true,
-                      "fontStyle": "BOLD",
-                      "textColor": "#231F20",
-                      "version": 1,
-                      "parentId": "1ldr6wsz7p",
-                      "renderMode": "CANVAS",
-                      "isLoading": false,
-                      "responsiveBehavior": "fill",
-                      "originalTopRow": 1,
-                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "maxDynamicHeight": 9000,
-                      "originalBottomRow": 5,
-                      "fontSize": "1.25rem",
-                      "minDynamicHeight": 4
-                    },
-                    {
-                      "resetFormOnClick": true,
-                      "boxShadow": "none",
-                      "widgetName": "Button4",
-                      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "displayName": "Button",
-                      "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
-                      "searchTags": [
-                        "click",
-                        "submit"
-                      ],
-                      "topRow": 31,
-                      "bottomRow": 35,
-                      "type": "BUTTON_WIDGET",
-                      "hideCard": false,
-                      "animateLoading": true,
-                      "leftColumn": 46,
-                      "dynamicBindingPathList": [
-                        {
-                          "key": "buttonColor"
-                        },
-                        {
-                          "key": "borderRadius"
-                        }
-                      ],
-                      "text": "Submit",
-                      "isDisabled": false,
-                      "key": "n7nkg0bgn9",
-                      "isDeprecated": false,
-                      "rightColumn": 62,
-                      "isDefaultClickDisabled": true,
-                      "widgetId": "4wcnpzhz93",
-                      "minWidth": 120,
-                      "isVisible": true,
-                      "recaptchaType": "V3",
-                      "version": 1,
-                      "parentId": "1ldr6wsz7p",
-                      "renderMode": "CANVAS",
-                      "isLoading": false,
-                      "responsiveBehavior": "hug",
-                      "originalTopRow": 31,
-                      "disabledWhenInvalid": true,
-                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "originalBottomRow": 35,
-                      "buttonVariant": "PRIMARY",
-                      "placement": "CENTER"
-                    },
-                    {
-                      "resetFormOnClick": true,
-                      "boxShadow": "none",
-                      "widgetName": "Button5",
-                      "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "displayName": "Button",
-                      "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
-                      "searchTags": [
-                        "click",
-                        "submit"
-                      ],
-                      "topRow": 31,
-                      "bottomRow": 35,
-                      "type": "BUTTON_WIDGET",
-                      "hideCard": false,
-                      "animateLoading": true,
-                      "leftColumn": 30,
-                      "dynamicBindingPathList": [
-                        {
-                          "key": "buttonColor"
-                        },
-                        {
-                          "key": "borderRadius"
-                        }
-                      ],
-                      "text": "Reset",
-                      "isDisabled": false,
-                      "key": "n7nkg0bgn9",
-                      "isDeprecated": false,
-                      "rightColumn": 46,
-                      "isDefaultClickDisabled": true,
-                      "widgetId": "4o41h0vex8",
-                      "minWidth": 120,
-                      "isVisible": true,
-                      "recaptchaType": "V3",
-                      "version": 1,
-                      "parentId": "1ldr6wsz7p",
-                      "renderMode": "CANVAS",
-                      "isLoading": false,
-                      "responsiveBehavior": "hug",
-                      "originalTopRow": 31,
-                      "disabledWhenInvalid": false,
-                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "originalBottomRow": 35,
-                      "buttonVariant": "SECONDARY",
-                      "placement": "CENTER"
-                    }
-                  ],
-                  "key": "wmsfwqlr9w",
-                  "isDeprecated": false,
-                  "rightColumn": 241.875,
-                  "detachFromLayout": true,
-                  "widgetId": "1ldr6wsz7p",
-                  "containerStyle": "none",
-                  "minWidth": 450,
-                  "isVisible": true,
-                  "version": 1,
-                  "parentId": "lds9njld8g",
-                  "renderMode": "CANVAS",
-                  "isLoading": false,
-                  "responsiveBehavior": "fill",
-                  "flexLayers": []
-                }
-              ],
-              "borderWidth": "1",
-              "positioning": "fixed",
-              "key": "i4h5dojwla",
-              "backgroundColor": "#FFFFFF",
-              "isDeprecated": false,
-              "rightColumn": 55,
-              "dynamicHeight": "AUTO_HEIGHT",
-              "widgetId": "lds9njld8g",
-              "minWidth": 450,
-              "isVisible": true,
-              "parentId": "0",
-              "renderMode": "CANVAS",
-              "isLoading": false,
-              "responsiveBehavior": "fill",
-              "originalTopRow": 65,
-              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "maxDynamicHeight": 9000,
-              "originalBottomRow": 102,
-              "minDynamicHeight": 10
-            },
-            {
-              "boxShadow": "none",
-              "widgetName": "select_playlist",
-              "isFilterable": true,
-              "displayName": "Select",
-              "iconSVG": "/static/media/icon.bd99caba5853ad71e4b3d8daffacb3a2.svg",
-              "labelText": "Select Playlist:",
-              "searchTags": [
-                "dropdown"
-              ],
-              "topRow": 13,
-              "bottomRow": 21,
-              "parentRowSpace": 10,
-              "labelWidth": 5,
-              "type": "SELECT_WIDGET",
-              "serverSideFiltering": false,
-              "hideCard": false,
-              "defaultOptionValue": "",
-              "animateLoading": true,
-              "parentColumnSpace": 17.125,
-              "dynamicTriggerPathList": [
-                {
-                  "key": "onDropdownOpen"
-                },
-                {
-                  "key": "onOptionChange"
-                }
-              ],
-              "leftColumn": 4,
-              "dynamicBindingPathList": [
-                {
-                  "key": "accentColor"
-                },
-                {
-                  "key": "borderRadius"
-                },
-                {
-                  "key": "options"
-                }
-              ],
-              "labelPosition": "Top",
-              "options": "{{listener_playlist.data.map( p => ({label:p.Name, value:p.PlaylistID}))}}",
-              "placeholderText": "Select option",
-              "isDisabled": false,
-              "key": "cp6n7wffpf",
-              "labelTextSize": "0.875rem",
-              "isRequired": false,
-              "isDeprecated": false,
-              "rightColumn": 42,
-              "dynamicHeight": "FIXED",
-              "widgetId": "l88wn3i1h3",
-              "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-              "minWidth": 450,
-              "isVisible": true,
-              "version": 1,
-              "parentId": "0",
-              "onDropdownOpen": "{{listener_playlist.run()}}",
-              "labelAlignment": "left",
-              "renderMode": "CANVAS",
-              "isLoading": false,
-              "responsiveBehavior": "fill",
-              "originalTopRow": 15,
-              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "maxDynamicHeight": 9000,
-              "originalBottomRow": 23,
-              "onOptionChange": "{{navigateTo('Listener Playlist',{PlaylistID: select_playlist.selectedOptionValue,\n\tListenerID: appsmith.URL.queryParams.ListenerID,\n\tPlaylistName: select_playlist.selectedOptionLabel}, 'SAME_WINDOW')}}",
-              "minDynamicHeight": 4
             }
           ]
         },
         "layoutOnLoadActions": [
           [
             {
-              "id": "Listener Home_listener_playlist",
-              "name": "listener_playlist",
+              "id": "Create Playlist_playlist_songs",
+              "name": "playlist_songs",
               "confirmBeforeExecute": false,
               "pluginType": "API",
               "jsonPathKeys": [
-                "appsmith.URL.queryParams.ListenerID"
+                "appsmith.URL.queryParams.PlaylistID"
               ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Create Playlist_get_songs",
+              "name": "get_songs",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [],
               "timeoutInMillisecond": 10000
             }
           ]
         ],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
-        "id": "Listener Home",
+        "id": "Create Playlist",
         "deleted": false,
         "policies": [],
         "userPermissions": []
@@ -1000,5 +1014,5 @@
     "isHidden": false
   },
   "deleted": false,
-  "gitSyncId": "643f4a791c081746975ca686_643f4dff1c081746975ca690"
+  "gitSyncId": "6440043450f2ce5995d33b63_644044de1747207d812af900"
 }

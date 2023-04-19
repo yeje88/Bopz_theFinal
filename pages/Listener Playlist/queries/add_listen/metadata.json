@@ -2,12 +2,12 @@
   "pluginType": "API",
   "pluginId": "restapi-plugin",
   "unpublishedAction": {
-    "name": "add_song",
+    "name": "add_listen",
     "datasource": {
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "web:4000/l/addPlaylistSong"
+        "url": "web:4000/updatePlays/{{appsmith.URL.queryParams.ListenerID}}/{{song_table.selectedRow.SongID}}"
       },
       "invalids": [],
       "messages": [],
@@ -29,9 +29,9 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "{{add_song_param.data}}",
+      "body": "",
       "bodyFormData": [],
-      "httpMethod": "POST",
+      "httpMethod": "PUT",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -39,30 +39,28 @@
         }
       ],
       "formData": {
-        "apiContentType": "application/json"
+        "apiContentType": "none"
       }
     },
     "executeOnLoad": false,
     "dynamicBindingPathList": [
       {
         "key": "datasourceUrl"
-      },
-      {
-        "key": "body"
       }
     ],
     "isValid": true,
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "add_song_param.data"
+      "appsmith.URL.queryParams.ListenerID",
+      "song_table.selectedRow.SongID"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Listener Playlist_add_song",
+  "id": "Listener Playlist_add_listen",
   "deleted": false,
-  "gitSyncId": "643f4a791c081746975ca686_643fee997478d42456731af9"
+  "gitSyncId": "6440043450f2ce5995d33b63_64404dba1747207d812af913"
 }

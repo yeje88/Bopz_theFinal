@@ -1372,7 +1372,7 @@
                         }
                       },
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "columnUpdatedAt": 1681885267020,
+                      "columnUpdatedAt": 1681951291267,
                       "originalBottomRow": 78,
                       "defaultSelectedRowIndices": [
                         0
@@ -1494,7 +1494,7 @@
                       "widgetId": "1qemgy736z",
                       "allowAddNewRow": false,
                       "minWidth": 450,
-                      "tableData": "{{get_artist_song.data}}",
+                      "tableData": "{{get_artist_stats.data}}",
                       "label": "Data",
                       "searchKey": "",
                       "parentId": "9goedlhfr0",
@@ -1807,13 +1807,10 @@
                           "key": "tableData"
                         },
                         {
-                          "key": "primaryColumns.ArtistID.computedValue"
-                        },
-                        {
                           "key": "primaryColumns.Title.computedValue"
                         },
                         {
-                          "key": "primaryColumns.SUM_ListenerPlays_TimesPlayed_.computedValue"
+                          "key": "primaryColumns.SongID.computedValue"
                         }
                       ],
                       "needsHeightForContent": true,
@@ -1851,7 +1848,7 @@
                         }
                       },
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "columnUpdatedAt": 1681948210712,
+                      "columnUpdatedAt": 1681951184637,
                       "originalBottomRow": 124,
                       "defaultSelectedRowIndices": [
                         0
@@ -1860,8 +1857,7 @@
                       "defaultPageSize": 0,
                       "columnOrder": [
                         "Title",
-                        "ArtistID",
-                        "SUM_ListenerPlays_TimesPlayed_"
+                        "SongID"
                       ],
                       "dynamicPropertyPathList": [],
                       "displayName": "Table",
@@ -1877,35 +1873,6 @@
                       "dynamicTriggerPathList": [],
                       "borderWidth": "1",
                       "primaryColumns": {
-                        "ArtistID": {
-                          "allowCellWrapping": false,
-                          "index": 1,
-                          "width": 150,
-                          "originalId": "ArtistID",
-                          "id": "ArtistID",
-                          "alias": "ArtistID",
-                          "horizontalAlignment": "LEFT",
-                          "verticalAlignment": "CENTER",
-                          "columnType": "number",
-                          "textColor": "",
-                          "textSize": "0.875rem",
-                          "fontStyle": "",
-                          "enableFilter": true,
-                          "enableSort": true,
-                          "isVisible": true,
-                          "isDisabled": false,
-                          "isCellEditable": false,
-                          "isEditable": false,
-                          "isCellVisible": true,
-                          "isDerived": false,
-                          "label": "ArtistID",
-                          "isSaveVisible": true,
-                          "isDiscardVisible": true,
-                          "computedValue": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"ArtistID\"]))}}",
-                          "sticky": "",
-                          "validation": {},
-                          "cellBackground": ""
-                        },
                         "Title": {
                           "allowCellWrapping": false,
                           "index": 5,
@@ -1935,16 +1902,16 @@
                           "validation": {},
                           "cellBackground": ""
                         },
-                        "SUM_ListenerPlays_TimesPlayed_": {
+                        "SongID": {
                           "allowCellWrapping": false,
-                          "index": 1,
+                          "index": 0,
                           "width": 150,
-                          "originalId": "SUM(ListenerPlays.TimesPlayed)",
-                          "id": "SUM_ListenerPlays_TimesPlayed_",
-                          "alias": "SUM(ListenerPlays.TimesPlayed)",
+                          "originalId": "SongID",
+                          "id": "SongID",
+                          "alias": "SongID",
                           "horizontalAlignment": "LEFT",
                           "verticalAlignment": "CENTER",
-                          "columnType": "text",
+                          "columnType": "number",
                           "textColor": "",
                           "textSize": "0.875rem",
                           "fontStyle": "",
@@ -1956,10 +1923,10 @@
                           "isEditable": false,
                           "isCellVisible": true,
                           "isDerived": false,
-                          "label": "SUM(ListenerPlays.TimesPlayed)",
+                          "label": "SongID",
                           "isSaveVisible": true,
                           "isDiscardVisible": true,
-                          "computedValue": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"SUM(ListenerPlays.TimesPlayed)\"]))}}",
+                          "computedValue": "{{Table3.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"SongID\"]))}}",
                           "sticky": "",
                           "validation": {},
                           "cellBackground": ""
@@ -2049,6 +2016,16 @@
             {
               "id": "Artist View_get_artist_song",
               "name": "get_artist_song",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [
+                "appsmith.URL.queryParams.ArtistID"
+              ],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Artist View_get_artist_stats",
+              "name": "get_artist_stats",
               "confirmBeforeExecute": false,
               "pluginType": "API",
               "jsonPathKeys": [

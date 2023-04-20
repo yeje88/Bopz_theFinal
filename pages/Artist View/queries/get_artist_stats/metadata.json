@@ -2,12 +2,12 @@
   "pluginType": "API",
   "pluginId": "restapi-plugin",
   "unpublishedAction": {
-    "name": "get_artist_song",
+    "name": "get_artist_stats",
     "datasource": {
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "web:4000/a/ArtistSongs/{{appsmith.URL.queryParams.ArtistID}}"
+        "url": "web:4000/a/SongStats/{{appsmith.URL.queryParams.ArtistID}}"
       },
       "invalids": [],
       "messages": [],
@@ -37,11 +37,7 @@
       }
     },
     "executeOnLoad": true,
-    "dynamicBindingPathList": [
-      {
-        "key": "datasourceUrl"
-      }
-    ],
+    "dynamicBindingPathList": [],
     "isValid": true,
     "invalids": [],
     "messages": [],
@@ -53,7 +49,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": "Artist View_get_artist_song",
+  "id": "Artist View_get_artist_stats",
   "deleted": false,
-  "gitSyncId": "643f4a791c081746975ca686_643f57781c081746975ca6f7"
+  "gitSyncId": "6440043450f2ce5995d33b63_644089e81747207d812af989"
 }

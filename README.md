@@ -1,6 +1,6 @@
 # The Bopz App - Appsmith Repo
 
-This repository contains the UI design for the Bopz app. The entire team contributed to this UI evenly; however, due to github challenges discussed with Dr. Fontenot, we ultimately completed the final UI on one computer and are using this repo for our second commit.
+This repository contains the UI design for the Bopz App. The entire team contributed to this UI evenly; however, due to github challenges discussed with Dr. Fontenot, we ultimately completed the final UI on one computer and are using this repo for our second commit.
 
 ## How to Launch App:
 Please follow the installation steps in the boilerplate repo first https://github.com/ellaholl/BopzApp_FlaskComponent.
